@@ -137,6 +137,7 @@ console.log(JSON.stringify(collectionInstanceSetting.models[0]));
 		})
 		.always(function(){
 			// 必ず実行
+		
 			
 		});
 }());
