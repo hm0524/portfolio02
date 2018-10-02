@@ -38,7 +38,7 @@ const viewSetting = Backbone.View.extend({
 //	compileTempWorkList: _.template($('#id-tempWorkList').html()),
 
 	initialize: function () {
-consol.log(this);
+//consol.log(this);
 		this.render();
 	},
 
