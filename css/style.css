@@ -1,0 +1,452 @@
+* {
+	margin: 0;
+	padding: 0;
+/*	height: 100%;	*/
+}
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	line-height: 1.4;
+	font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+	font-weight: 500;
+	font-size: 0.9em;
+	color: #333;
+	background-color: #fff;
+	height: 100%;
+/*	width: 100%;	*/
+	max-width: 960px;
+/*	text-align: center;	*/
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+a {
+	cursor: pointer;
+}
+
+header {
+	position: relative;
+	z-index: 1100;
+}
+
+article {
+/*	width: 100vw;	*/
+	max-width: 960px;
+}
+
+.class-menu-bar {
+	max-width: 960px;
+}
+
+.class-main {
+	position: absolute;
+	z-index: 1000;
+	top: 50px;
+	background-color: #FFFDE1;
+}
+
+
+.class-pick-up {
+	position: absolute;
+	width: 100%;
+
+}
+
+.class-work-list {
+	padding-top: 375px;
+}
+
+
+
+header .class-table {
+	width: 100%;
+	display: table;
+	height: 50px;
+/*		height: 6vh;	*/
+	background-color: #FEF778;
+	transform: translate3d(0, 0, 0);
+
+
+/*	position: absolute;	*/
+/*	top: 0;
+	left: 0;
+	z-index: 1;
+
+	background: linear-gradient(to bottom, #a6d900 0%, #ff4454 100%);	*/
+/*	opacity: 0.5;	*/
+/*	animation: huerotator 3s infinite alternate;	*/
+
+	border-bottom: 3px solid #FBA746;
+}
+
+@keyframes huerotator {
+	0% {
+		-webkit-filter: hue-rotate(0deg);
+		filter: hue-rotate(0deg);
+	}
+
+	100% {
+		-webkit-filter: hue-rotate(360deg);
+		filter: hue-rotate(360deg);
+	}
+}
+
+
+.class-cell {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.header-title {
+	margin: auto;
+}
+
+.header-title a {
+	color: #333;
+}
+
+.header-button {
+	text-align: right;
+}
+
+
+.btn-default {
+	color: #000;
+	background-color: #fff;
+	border: none;
+/*	border-color: #FBA746;	*/
+}
+.btn-default:hover {
+	color: #ef4123;
+	background-color: #ffffdf;
+	border-color: #ef4123;
+}
+.btn-default:active,
+.btn-default:active:hover {
+	color: #fff;
+	background-color: #ef4123;
+	border-color: #ef4123;
+}
+.btn-default:focus,
+.btn-default:active:focus {
+	color: #000;
+	background-color: #fff;
+	border-color: #ef4123;
+}
+
+@media screen and (min-width: 768px) {
+
+	/* サイドメニューのトグル非表示 */
+	#id-btn-toggle {
+		display: none;
+	}
+
+	/* サイドメニュー非表示 */
+	#id-side-nav {
+		display: none;
+	}
+
+	/* スライド画像のサイズ */
+	.class-pick-up img {
+		width: 25vw;
+	}
+
+}
+
+@media screen and (max-width: 992px) {
+
+	/* スライド画像のサイズ */
+	.class-pick-up img {
+		width: 50vw;
+	}
+}
+
+@media screen and (max-width: 768px) {
+
+	/* スライド画像のサイズ */
+	.class-pick-up img {
+		width: 100vw;
+	}
+}
+
+.class-btn-toggle {
+	color: #000;
+	background-color: #fff;
+	border-color: none;
+}
+.class-btn-toggle:hover {
+	color: #ef4123;
+	background-color: #ffffdf;
+	border-color: none;
+}
+.class-btn-toggle:active,
+.class-btn-toggle:active:hover {
+	color: #fff;
+	background-color: #ef4123;
+	border-color: #ef4123;
+}
+.class-btn-toggle:focus,
+.class-btn-toggle:active:focus {
+	color: #000;
+	background-color: #fff;
+	border-color: #ef4123;
+}
+
+.pick-up-title {
+	margin: 0 auto !important;
+	float: none !important;
+}
+
+/* ――――― サイドメニュー ――――― */
+#id-side-nav {
+	font-size: 2vh;
+}
+
+.class-side-nav-text {
+	text-indent: 1em;
+}
+
+.header-button .fa {
+	padding-right: 0.2em;
+}
+
+
+nav {
+	position: fixed;
+	top: 50px;
+	background-color: rgba(66,66,66,0.6);
+/*	width: 60%;	*/
+	height: auto;
+}
+
+nav a {
+	color: #fff;
+}
+
+/* ――――― TOPページ ――――― */
+.class-top img {
+/*	width: 100vw;	*/
+	width: 100%;
+}
+
+/* ――――― サブタイトル ――――― */
+.class-sub-title {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	text-align: center;		/* for no-flexbox browsers */
+}
+
+.class-sub-title:before,
+.class-sub-title:after {
+	border-top: 1px solid;
+	content: "";
+	display: inline;		/* for IE */
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	-ms-flex: 1;
+	flex-grow: 1;
+}
+
+.class-sub-title:before {
+	margin-right: 0.5em;
+}
+
+.class-sub-title:after {
+	margin-left: 0.5em;
+}
+
+/* ――――― 作品一覧 ――――― */
+
+
+/* ――――― sns アイコン ――――― */
+.clearfix{
+	zoom:1;
+}
+.clearfix:after{
+	content:"";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility:hidden;
+}
+
+/* サークルのスタイル */
+.sns_circle{
+	position:relative;
+	width: 50px;
+	height: 50px;
+	margin:0 5px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	background-color: #999;
+	float:left;
+	list-style: none;
+}
+
+/* Webフォントに関する指定 */
+.sns_circle span{
+/*	position:absolute;	*/
+	padding:10px;
+	font-size:30px;
+	color:#FFF;	/* 文字の色 */
+}
+
+/* リンク領域をブロック全体に */
+.sns_circle a{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	text-indent:-999px;
+	color:#FFF;	/* 文字の色 */
+}
+
+/* マウスオーバー */
+.sns_circle a:hover{
+	background-color:#FFF;
+	filter:alpha(opacity=50);
+	-moz-opacity: 0.5;
+	opacity: 0.5;
+}
+
+/* 横幅を300pxに固定して真ん中に表示 */
+ul.circle_group{
+	width:300px;
+	margin:auto;
+	list-style: none;
+	padding:0;
+}
+
+/* アイコン毎の配色と配置 */
+.sns_circle.feedly{
+	background-color: #6CC655;
+}
+
+.sns_circle.facebook{
+	background-color: #265a96;
+}
+
+.sns_circle.twitter{
+	background-color: #00acec;
+}
+
+.sns_circle.hatebu{
+	background-color: #006fbb;
+}
+
+.sns_circle.pocket{
+	background-color: #EE4256;
+}
+
+.sns_circle.googleplus{
+	background-color: #dd4b39;
+}
+
+.sns_circle.line{
+	background-color: #2cbf13;
+}
+
+.sns_circle.feed{
+	background-color: #ff9900;
+}
+
+.sns_circle.youtube{
+	background-color: #e22d26;
+}
+
+.sns_circle.arrow{
+	background-color: #FBA746;
+}
+
+
+
+/* ――――― ブログの外枠 ――――― */
+.embed-wrapper {
+	width: 100%;
+	height: 0;
+	padding-bottom: 100%;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+/* ――――― ブログエリア ――――― */
+.embed-wrapper iframe {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: none;
+}
+
+
+footer .class-table {
+	width:100%;
+	display: table;
+	margin:0 auto;
+	height: 100px;
+	padding: 10px;
+}
+
+footer {
+
+}
+
+footer div {
+	text-align: center;
+	background-color: #7F7F7F;
+	color:#fff;
+}
+
+
+
+/* ――――― PICK UP ――――― */
+.class-slider {
+	display:none;
+}
+.class-slider.slick-initialized {
+	display: block;
+}
+
+
+/*.class-pick-up img {
+	width: 25vw;
+}	*/
+
+
+
+
+
+
+
+
+
+
+/*
+.header-left {
+	float: left !important;
+}
+.header-right {
+	float: right !important;
+}
+*/
+
+
+

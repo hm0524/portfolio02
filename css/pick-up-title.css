@@ -1,0 +1,110 @@
+figure.pick-up-title {
+	font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+	position: relative;
+	float: left;
+	overflow: hidden;
+/* 	margin: 10px 1%; */
+	min-width: 230px;
+	max-width: 315px;
+	max-height: 220px;
+	width: 100%;
+	color: #000000;
+	text-align: center;
+}
+figure.pick-up-title * {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.6s ease;
+	transition: all 0.6s ease;
+}
+figure.pick-up-title img {
+	opacity: 1;
+	width: 100%;
+}
+figure.pick-up-title:after,
+figure.pick-up-title:before {
+	background: #ffffff;
+	width: 200%;
+	height: 200%;
+	position: absolute;
+	content: '';
+	opacity: 0.5;
+	-webkit-transition: all 0.55s ease-in-out;
+	transition: all 0.55s ease-in-out;
+	z-index: 1;
+}
+figure.pick-up-title:after {
+	top: 0;
+	left: 0;
+	-webkit-transform: skew(-45deg) translateX(-150%);
+	transform: skew(-45deg) translateX(-150%);
+}
+figure.pick-up-title:before {
+	right: 0;
+	bottom: 0;
+	-webkit-transform: skew(-45deg) translateX(150%);
+	transform: skew(-45deg) translateX(150%);
+}
+figure.pick-up-title figcaption {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	z-index: 2;
+}
+figure.pick-up-title h2,
+figure.pick-up-title p {
+	margin: 0;
+	width: 100%;
+	opacity: 0;
+}
+figure.pick-up-title h2 {
+	padding: 0 30px;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+figure.pick-up-title p {
+	padding: 0 50px;
+	font-size: 0.8em;
+	font-weight: 500;
+}
+figure.pick-up-title a {
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	position: absolute;
+	z-index: 2;
+}
+figure.pick-up-title:hover img,
+figure.pick-up-title.hover img {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+figure.pick-up-title:hover:after,
+figure.pick-up-title.hover:after {
+	-webkit-transform: skew(-45deg) translateX(-50%);
+	transform: skew(-45deg) translateX(-50%);
+}
+figure.pick-up-title:hover:before,
+figure.pick-up-title.hover:before {
+	-webkit-transform: skew(-45deg) translateX(50%);
+	transform: skew(-45deg) translateX(50%);
+}
+figure.pick-up-title:hover figcaption h2,
+figure.pick-up-title.hover figcaption h2,
+figure.pick-up-title:hover figcaption p,
+figure.pick-up-title.hover figcaption p {
+	-webkit-transition-delay: 0.2s;
+	transition-delay: 0.2s;
+}
+figure.pick-up-title:hover figcaption h2,
+figure.pick-up-title.hover figcaption h2 {
+	opacity: 1;
+}
+figure.pick-up-title:hover figcaption p,
+figure.pick-up-title.hover figcaption p {
+	opacity: 0.7;
+}
