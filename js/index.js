@@ -116,10 +116,10 @@ console.log(model);
 //console.log(JSON.stringify(collectionInstanceSetting.where({ id: 3 })));
 console.log(JSON.stringify(collectionInstanceSetting.models[0]));
 			// Viewインスタンス生成
-//			const myViewInstance = new viewSetting({
-//				// Collectionを渡す
-//				collection:collectionInstanceSetting
-//			});
+			const myViewInstance = new viewSetting({
+				// Collectionを渡す
+				collection:collectionInstanceSetting
+			});
 		});
 		
 //	console.log(JSON.stringify(collectionInstanceSetting));
