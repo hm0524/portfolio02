@@ -70,10 +70,9 @@ header .class-table {
 	transform: translate3d(0, 0, 0);
 
 
-	position: fixed;
-	top: 0;
-	margin: 0 auto;
-/*	left: 0;
+/*	position: absolute;	*/
+/*	top: 0;
+	left: 0;
 	z-index: 1;
 
 	background: linear-gradient(to bottom, #a6d900 0%, #ff4454 100%);	*/
