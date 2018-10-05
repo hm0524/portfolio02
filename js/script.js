@@ -313,11 +313,33 @@ const viewWorklist = Backbone.View.extend({
 
 });
 
+let collectionInstanceSetting;
+
+/**
+ * インスタンス生成 【設定ファイル】
+ */
+const createInstanceSetting = function(_json){
+
+	let tmpList = [];
+	$.each(_json, function(index, element) {
+		tmpList.push(new modelSetting(element));
+	});
+
+	// Collectionインスタンス生成
+	collectionInstanceSetting = new collectionDefine([]);
+
+	$.each(tmpList, function(index, element) {
+		collectionInstanceSetting.add(new Backbone.Model(element.attributes));
+	});
+	
+};
 
 /**
  * 【設定ファイル】読み込み
  */
 const loadSetting = function(){
+
+//var $defer = new $.Deferred();
 
 	// 設定ファイル 読み込み
 	$.getJSON('data/setting.json')
@@ -345,27 +367,8 @@ const loadSetting = function(){
 			});
 			
 		});
-};
-
-let collectionInstanceSetting;
-	
-/**
- * インスタンス生成 【設定ファイル】
- */
-const createInstanceSetting = function(_json){
-
-	let tmpList = [];
-	$.each(_json, function(index, element) {
-		tmpList.push(new modelSetting(element));
-	});
-
-	// Collectionインスタンス生成
-	collectionInstanceSetting = new collectionDefine([]);
-
-	$.each(tmpList, function(index, element) {
-		collectionInstanceSetting.add(new Backbone.Model(element.attributes));
-	});
-	
+		
+//return $defer.promise();
 };
 
 /**

@@ -4,14 +4,15 @@
 	// メニュー配置
 	$('#id_menu').load('temp_menu.html', function() {
 
+$.when(
 		// 【設定ファイル】読み込み
-		loadSetting();
-
+		loadSetting()
+).done(function(){
 		// トップ配置
 		$('#id_main').load('temp_top.html', function() {
 
 			// Viewインスタンス生成 【PICK UP配置】
-			const viewInstanceSetting = new viewPickup({
+			const viewInstancePickup = new viewPickup({
 				// Collectionを渡す
 				collection:collectionInstanceSetting
 			});
@@ -23,7 +24,7 @@
 			$('#id_footer').load('temp_footer.html');
 
 		});
-
+});
 	});
 
 }());
