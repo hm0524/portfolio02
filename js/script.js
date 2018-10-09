@@ -429,13 +429,15 @@ const createInstanceWorklist = function(_json){
  */
 const moveHeadWidth = function(){
 
-	const winWidth = $(window).width();
-	let elementWidth = $('.class-menu-bar').width() + 30;
-	$('.class-menu-bar').css('left', (winWidth - elementWidth) / 2);
+	const userAgent = window.navigator.userAgent.toLowerCase();
+	if(userAgent.indexOf('msie') != -1 || userAgent.indexOf('trident') != -1) {
+		const winWidth = $(window).width();
+		let elementWidth = $('.class-menu-bar').width() + 30;
+		$('.class-menu-bar').css('left', (winWidth - elementWidth) / 2);
+	}
 
 };
 
 $(window).on('load resize', function(){
-alert();
 	moveHeadWidth();
 });
