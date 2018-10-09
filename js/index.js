@@ -15,7 +15,7 @@
 			$('#id_main').load('temp_top.html', function() {
 			
 				const userAgent = window.navigator.userAgent.toLowerCase();
-				if(userAgent.indexOf('msie') != -1 || userAgent.indexOf('trident') != -1 ||) {
+				if(userAgent.indexOf('msie') != -1 || userAgent.indexOf('trident') != -1) {
 					console.log('Internet Explorerをお使いですね');
 				}
 
