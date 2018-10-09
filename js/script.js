@@ -435,3 +435,7 @@ const moveHeadWidth = function(){
 
 };
 
+$(window).on('load resize', function(){
+alert();
+	moveHeadWidth();
+});
