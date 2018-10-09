@@ -339,7 +339,7 @@ const createInstanceSetting = function(_json){
  */
 const loadSetting = function(){
 
-//var $defer = new $.Deferred();
+	var $defer = new $.Deferred();
 
 	// 設定ファイル 読み込み
 	$.getJSON('data/setting.json')
@@ -366,9 +366,10 @@ const loadSetting = function(){
 				collection:collectionInstanceSetting
 			});
 			
+			return $defer.promise();
+			
 		});
 		
-//return $defer.promise();
 };
 
 /**
@@ -423,4 +424,14 @@ const createInstanceWorklist = function(_json){
 	
 };
 
+/**
+ * ヘッダ位置調整【IE対応】
+ */
+const moveHeadWidth = function(){
+
+	const winWidth = $(window).width();
+	let elementWidth = $('.class-menu-bar').width() + 30;
+	$('.class-menu-bar').css('left', (winWidth - elementWidth) / 2);
+
+};
 

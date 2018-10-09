@@ -17,12 +17,8 @@
 				// IE対応
 				const userAgent = window.navigator.userAgent.toLowerCase();
 				if(userAgent.indexOf('msie') != -1 || userAgent.indexOf('trident') != -1) {
-//					alert($(window).width());
+					moveHeadWidth();
 				}
-				const winWidth = $(window).width();
-				let elementWidth = $('.class-menu-bar').width() + 30;
-				$('.class-menu-bar').css('left', (winWidth - elementWidth) / 2);
-
 
 				// Viewインスタンス生成 【PICK UP配置】
 				const viewInstancePickup = new viewPickup({
