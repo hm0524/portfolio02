@@ -16,7 +16,7 @@
 			
 				const userAgent = window.navigator.userAgent.toLowerCase();
 				if(userAgent.indexOf('msie') != -1 || userAgent.indexOf('trident') != -1) {
-					console.log('Internet Explorerをお使いですね');
+					alert('Internet Explorerをお使いですね');
 				}
 
 				// Viewインスタンス生成 【PICK UP配置】
