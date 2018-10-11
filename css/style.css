@@ -265,7 +265,13 @@ nav a {
 }
 
 /* ――――― 作品一覧 ――――― */
+.class-work-list-container {
+	margin: 0;
+}
 
+.class-works {
+	 text-align: center;
+}
 
 /* ――――― sns アイコン ――――― */
 .clearfix{
