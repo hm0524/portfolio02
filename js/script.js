@@ -222,16 +222,19 @@ const viewPickup = Backbone.View.extend({
 
 		const that = this;
 
-		// PICK UP配置
-		this.collection.each(function (model, index) {
+//		if(this.collection) {
+//console.log(this.collection);
+			// PICK UP配置
+			this.collection.each(function (model, index) {
 
-			// PICK UP 表示
-			that.createPickup(model);
+				// PICK UP 表示
+				that.createPickup(model);
 
-		}, this);
+			}, this);
 		
-		// PICK UP配置 完了後 スライダー初期設定
-		that.iniSlider();
+			// PICK UP配置 完了後 スライダー初期設定
+			that.iniSlider();
+//		}
 		
 	},
 
@@ -276,12 +279,14 @@ const viewPickup = Backbone.View.extend({
 	createPickup: function(_model){
 
 		let _code;
-		
+
 		// PICK UPアドレスが空白はスルー
 		if(_model["attributes"]["pickUpUrl"]){
 //			_code = $("<div><figure class='pick-up-title'><img id=" + _model["attributes"]["id"] +" data-lazy=" + _model["attributes"]["pickUpUrl"] + "><figcaption><h2>" + _model["attributes"]["pickUpTitle"] + "</h2><p>" + _model["attributes"]["caption"] + "</p></figcaption><a id=" + _model["attributes"]["id"] +"></a></figure></div>");
 			_code = $("<div><figure class='pick-up-title'><img id=" + _model["attributes"]["id"] +" src=" + _model["attributes"]["pickUpUrl"] + "><figcaption><h2>" + _model["attributes"]["pickUpTitle"] + "</h2><p>" + _model["attributes"]["caption"] + "</p></figcaption><a id=" + _model["attributes"]["id"] +"></a></figure></div>");
+console.log(_code);
 			$("#id-slider").append(_code);
+
 		}
 
 	},
@@ -316,22 +321,21 @@ const viewWorklist = Backbone.View.extend({
 let collectionInstanceSetting;
 
 /**
- * インスタンス生成 【設定ファイル】
+ * Collectionインスタンス生成 【設定ファイル】
  */
 const createInstanceSetting = function(_json){
 
-	let tmpList = [];
-	$.each(_json, function(index, element) {
-		tmpList.push(new modelSetting(element));
-	});
+//	let $defer = new $.Deferred();
 
 	// Collectionインスタンス生成
-	collectionInstanceSetting = new collectionDefine([]);
+	collectionInstanceSetting = new collectionDefine();
 
-	$.each(tmpList, function(index, element) {
-		collectionInstanceSetting.add(new Backbone.Model(element.attributes));
+	$.each(_json, function(index, element) {
+		collectionInstanceSetting.add(new Backbone.Model(element));
 	});
 	
+//	return $defer.promise();
+
 };
 
 /**
@@ -339,37 +343,52 @@ const createInstanceSetting = function(_json){
  */
 const loadSetting = function(){
 
-	var $defer = new $.Deferred();
+	var defer = $.Deferred();
+	
+	let _data;
 
 	// 設定ファイル 読み込み
-	$.getJSON('data/setting.json')
-		.done(function(json){
-			// 成功
-			
-			// インスタンス生成 【設定ファイル】
-			createInstanceSetting(json);
+	$.when(
+		$.getJSON('data/setting.json')
+	)
+	.done(function(json){
+		// 成功
 
-		})
-		.fail(function(){
-			// 失敗
-			
-			// インスタンス生成 【設定ファイル】
-			createInstanceSetting(seting);
-			
-		})
-		.always(function(){
-			// 必ず実行
-			
-			// Viewインスタンス生成
-			const viewInstanceSetting = new viewSetting({
-				// Collectionを渡す
-				collection:collectionInstanceSetting
-			});
-			
-			return $defer.promise();
-			
+		// .json
+		_data = json;
+
+	})
+	.fail(function(){
+		// 失敗
+
+		// 配列
+		_data = seting;
+
+	})
+	.always(function(){
+		// 必ず実行
+
+		// Collectionインスタンス生成 【設定ファイル】
+		createInstanceSetting(_data)
+
+		// Viewインスタンス生成 【設定ファイル】
+		const viewInstanceSetting = new viewSetting({
+			// Collectionを渡す
+			collection:collectionInstanceSetting
 		});
-		
+
+		// Viewインスタンス生成 【PICK UP配置】
+		const viewInstancePickup = new viewPickup({
+			// Collectionを渡す
+			collection:collectionInstanceSetting
+		});
+
+		return defer.promise();
+
+	});
+	
+//	return defer.promise();
+
 };
 
 /**
@@ -410,18 +429,18 @@ const loadWorklist = function(){
  */
 const createInstanceWorklist = function(_json){
 
-	let tmpList = [];
-	$.each(_json, function(index, element) {
-		tmpList.push(new modelWorklist(element));
-	});
+//	let tmpList = [];
+//	$.each(_json, function(index, element) {
+//		tmpList.push(new modelWorklist(element));
+//	});
 
 	// Collectionインスタンス生成
-	collectionInstanceWorklist = new collectionDefine([]);
+	collectionInstanceWorklist = new collectionDefine();
 
-	$.each(tmpList, function(index, element) {
-		collectionInstanceWorklist.add(new Backbone.Model(element.attributes));
+	$.each(_json, function(index, element) {
+		collectionInstanceWorklist.add(new Backbone.Model(element));
 	});
-	
+
 };
 
 /**
