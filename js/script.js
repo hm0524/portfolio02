@@ -222,20 +222,17 @@ const viewPickup = Backbone.View.extend({
 
 		const that = this;
 
-//		if(this.collection) {
-//console.log(this.collection);
-			// PICK UP配置
-			this.collection.each(function (model, index) {
+		// PICK UP配置
+		this.collection.each(function (model, index) {
 
-				// PICK UP 表示
-				that.createPickup(model);
+			// PICK UP 表示
+			that.createPickup(model);
 
-			}, this);
+		}, this);
 		
-			// PICK UP配置 完了後 スライダー初期設定
-			that.iniSlider();
-//		}
-		
+		// PICK UP配置 完了後 スライダー初期設定
+		that.iniSlider();
+
 	},
 
 	/**
@@ -284,7 +281,6 @@ const viewPickup = Backbone.View.extend({
 		if(_model["attributes"]["pickUpUrl"]){
 //			_code = $("<div><figure class='pick-up-title'><img id=" + _model["attributes"]["id"] +" data-lazy=" + _model["attributes"]["pickUpUrl"] + "><figcaption><h2>" + _model["attributes"]["pickUpTitle"] + "</h2><p>" + _model["attributes"]["caption"] + "</p></figcaption><a id=" + _model["attributes"]["id"] +"></a></figure></div>");
 			_code = $("<div><figure class='pick-up-title'><img id=" + _model["attributes"]["id"] +" src=" + _model["attributes"]["pickUpUrl"] + "><figcaption><h2>" + _model["attributes"]["pickUpTitle"] + "</h2><p>" + _model["attributes"]["caption"] + "</p></figcaption><a id=" + _model["attributes"]["id"] +"></a></figure></div>");
-console.log(_code);
 			$("#id-slider").append(_code);
 
 		}
@@ -311,7 +307,8 @@ const viewWorklist = Backbone.View.extend({
 	
 		this.collection.each(function (model, index) {
 			// ヘッダメニューの作品一覧
-			$("#id-works").append("<a href='#' class='col-md-3'><span data-subtitle=" + model['attributes']['subTitle'] + ">" + model['attributes']['title'] + "</span></a>");
+//			$("#id-works").append("<a href='#' class='col-md-3'><span data-subtitle=" + model['attributes']['subTitle'] + ">" + model['attributes']['title'] + "</span></a>");
+			$("#id-works").append("<a class='class-workList' href='#0' data-title=" + model['attributes']['subTitle'] + "><span>" + model['attributes']['title'] + "</span></a>");
 		}, this);
 
 	},
@@ -325,16 +322,12 @@ let collectionInstanceSetting;
  */
 const createInstanceSetting = function(_json){
 
-//	let $defer = new $.Deferred();
-
 	// Collectionインスタンス生成
 	collectionInstanceSetting = new collectionDefine();
 
 	$.each(_json, function(index, element) {
 		collectionInstanceSetting.add(new Backbone.Model(element));
 	});
-	
-//	return $defer.promise();
 
 };
 
@@ -386,8 +379,6 @@ const loadSetting = function(){
 		return defer.promise();
 
 	});
-	
-//	return defer.promise();
 
 };
 
@@ -428,11 +419,6 @@ const loadWorklist = function(){
  * インスタンス生成 【作品一覧ファイル】
  */
 const createInstanceWorklist = function(_json){
-
-//	let tmpList = [];
-//	$.each(_json, function(index, element) {
-//		tmpList.push(new modelWorklist(element));
-//	});
 
 	// Collectionインスタンス生成
 	collectionInstanceWorklist = new collectionDefine();
