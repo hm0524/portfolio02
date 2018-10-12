@@ -1,46 +1,22 @@
-@keyframes gradient-move {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
 .class-workList {
 	border-radius: 0.5em;
 	padding: 10px 5px;
-	overflow: hidden;
-	font-weight: 600;
 	letter-spacing: .02em;
-	text-decoration: none;
-	transition: 0.3s cubic-bezier(0.34, 0.01, 0.35, 0.98), opacity 0.5s;
 	position: relative;
 	display: inline-block;
-	box-shadow: inset 0px 0px 0px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0px 0px 0px 2px rgba(0, 0, 0, 0.5);
 	color: black;
 	overflow: hidden;
+	background-color: #fff;
 }
+
 .class-workList:before {
-	transition: 1.5s cubic-bezier(0.34, 0.01, 0.35, 0.98);
-	overflow: hidden;
+	transition: 0.5s ease-out;
 	z-index: -1;
-	opacity: 0;
-	background: linear-gradient(270deg, coral, #fff446, #15f0e5);
-	animation: gradient-move 15s ease infinite;
-	background-size: 2000% 2000%;
 	content: '';
-	border-radius: 0.5em;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	opacity: 0;
 }
+
+/* subTitle 表示 */
 .class-workList:after {
 	content: attr(data-title);
 	position: absolute;
@@ -48,39 +24,49 @@
 	left: 0;
 	right: 0;
 	text-align: center;
-	transform: translate3d(0, -250%, 0);
-	transition: opacity 0.5s cubic-bezier(0.34, 0.01, 0.35, 0.98) 0.1s, transform 0s 0.6s;
+	transform: translate3d(0, 150%, 0);
 	opacity: 0;
-	color: rgba(0, 0, 0, 0.4);
+	transition: opacity 0.5s ease-out, transform 0s 0.6s;
 }
+
 .class-workList span {
 	display: inline-block;
-	transition: opacity 1.5s cubic-bezier(0.34, 0.01, 0.35, 0.98) 0.5s;
 	opacity: 1;
+	transition: opacity 1.5s ease-out 0.5s;
 }
+
+/* ボタン変更 off → on */
 .class-workList:hover, 
 .class-workList:focus, 
 .class-workList:active {
 	box-shadow: inset 0px 0px 0px 2px rgba(0, 0, 0, 0);
-	color: rgba(0, 0, 0, 0.4);
+	color: #0458B9;
+	background-color: #FBA746;
 }
+
+/*
 .class-workList:hover:before, 
 .class-workList:focus:before, 
 .class-workList:active:before {
 	opacity: 1;
-	transition: 0.3s cubic-bezier(0.34, 0.01, 0.35, 0.98);
+	transition: 0.3s ease-out 0.5s;
 }
+*/
+
+/* title 非表示 */
 .class-workList:hover span, 
 .class-workList:focus span, 
 .class-workList:active span {
-	transform: translate3d(0, 150%, 0);
-	transition: transform 0.5s cubic-bezier(1, 0, 0, 1), opacity 0s 0.5s;
+	transform: translate3d(0, 150%, 0);	/* 下に移動 */
 	opacity: 0;
+	transition: transform 0.2s ease-out, opacity 0s 0.3s;
 }
+
+/* subTitle 表示 */
 .class-workList:hover:after, 
 .class-workList:focus:after, 
 .class-workList:active:after {
 	transform: translate3d(0, -50%, 0);
-	transition: transform 0.5s cubic-bezier(1, 0, 0, 1) 0.1s;
 	opacity: 1;
+	transition: transform 0.5s ease-out 0.1s;
 }
