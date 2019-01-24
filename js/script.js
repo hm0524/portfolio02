@@ -440,13 +440,14 @@ const loadWorklist = function(){
 		});
 };
 
+let collectionInstanceWorklist;
 /**
  * インスタンス生成 【作品一覧ファイル】
  */
 const createInstanceWorklist = function(_json){
 
 	// Collectionインスタンス生成
-	let collectionInstanceWorklist = new collectionDefine();
+	collectionInstanceWorklist = new collectionDefine();
 
 	$.each(_json, function(index, element) {
 		collectionInstanceWorklist.add(new Backbone.Model(element));
