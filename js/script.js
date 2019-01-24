@@ -440,6 +440,7 @@ const loadWorklist = function(){
 		});
 };
 
+let collectionInstanceWorklist;
 /**
  * インスタンス生成 【作品一覧ファイル】
  */
