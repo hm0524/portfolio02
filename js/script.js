@@ -240,14 +240,14 @@ const viewPickup = Backbone.View.extend({
 	 */
 	iniSlider: function(){
 
-		// 画像がlazyLoadされる度に呼ばれるイベント
-		$('.class-slider').on('lazyLoaded', function(event, slick, image, imageSource){
-
-			// 作品一覧 縦位置調整
-			workListPaddingTop(image[0].height);
-
-		});
-
+		// // 画像がlazyLoadされる度に呼ばれるイベント
+		// $('.class-slider').on('lazyLoaded', function(event, slick, image, imageSource){
+		//
+		// 	// 作品一覧 縦位置調整
+		// 	workListPaddingTop(image[0].height);
+		//
+		// });
+console.log('xxx');
 		$('.class-slider').slick({
 			accessibility: false,	// 矢印キーでスライドを切り替える
 			adaptiveHeight: false,	// スライドの高さが違うときに自動調整する
@@ -267,7 +267,7 @@ const viewPickup = Backbone.View.extend({
 					}
 			}]
 		});
-console.log('xxx');
+
 	},
 
 	/**
