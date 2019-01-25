@@ -283,7 +283,7 @@ console.log(this.compileTempPickup(model.toJSON()));
 			// PICK UP 表示
 			if(model["attributes"]["pickUpUrl"]){	// PICK UPアドレスが空白はスルー
 
-				while ($(this.el).length < 1) {
+				while ($(this.el).length < 2) {
 				$(this.el).append(this.compileTempPickup(model.toJSON()));
 				}
 
