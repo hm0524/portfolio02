@@ -271,9 +271,9 @@ const viewPickup = Backbone.View.extend({
 	},
 
 	xxx: function (aaa, bbb) {
-console.log(aaa.length);
+console.log(aaa);
 		aaa.append(bbb);
-console.log(aaa.length);
+console.log(aaa);
 		// if (aaa.length === 0) {
 		// 	this.xxx(aaa, bbb);
 		// }
