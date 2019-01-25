@@ -277,8 +277,9 @@ const viewPickup = Backbone.View.extend({
 
 		// PICK UP配置
 		this.collection.each(function (model, index) {
-console.log(this.compileTempPickup);
-console.log(model.toJSON());
+// console.log(this.compileTempPickup);
+// console.log(model.toJSON());
+console.log(this.compileTempPickup(model.toJSON()));
 			// PICK UP 表示
 			if(model["attributes"]["pickUpUrl"]){	// PICK UPアドレスが空白はスルー
 				$(this.el).append(this.compileTempPickup(model.toJSON()));
