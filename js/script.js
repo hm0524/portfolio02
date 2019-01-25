@@ -281,9 +281,9 @@ const viewPickup = Backbone.View.extend({
 // console.log(model.toJSON());
 console.log(this.compileTempPickup(model.toJSON()));
 			// PICK UP 表示
-//			if(model["attributes"]["pickUpUrl"]){	// PICK UPアドレスが空白はスルー
+			if(model["attributes"]["pickUpUrl"]){	// PICK UPアドレスが空白はスルー
 				$(this.el).append(this.compileTempPickup(model.toJSON()));
-//			}
+			}
 console.log($(this.el).length);
 // w.fn.init {}
 // w.fn.init [div#id-slider.class-slider]
