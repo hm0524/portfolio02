@@ -270,6 +270,10 @@ const viewPickup = Backbone.View.extend({
 
 	},
 
+	xxx: function (aaa, bbb) {
+		aaa.append(bbb);
+	},
+
 	/**
 	 * render
 	 */
@@ -284,7 +288,8 @@ console.log(this.compileTempPickup(model.toJSON()));
 			if(model["attributes"]["pickUpUrl"]){	// PICK UPアドレスが空白はスルー
 
 				// while ($(this.el).length < 1) {
-				$(this.el).append(this.compileTempPickup(model.toJSON()));
+				// $(this.el).append(this.compileTempPickup(model.toJSON()));
+				xxx($(this.el), this.compileTempPickup(model.toJSON()));
 				// }
 
 
