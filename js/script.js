@@ -289,7 +289,7 @@ console.log(this.compileTempPickup(model.toJSON()));
 
 				// while ($(this.el).length < 1) {
 				// $(this.el).append(this.compileTempPickup(model.toJSON()));
-				xxx($(this.el), this.compileTempPickup(model.toJSON()));
+				this.xxx($(this.el), this.compileTempPickup(model.toJSON()));
 				// }
 
 
