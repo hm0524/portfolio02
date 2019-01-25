@@ -247,7 +247,7 @@ const viewPickup = Backbone.View.extend({
 		// 	workListPaddingTop(image[0].height);
 		//
 		// });
-console.log($('.class-slider'));
+// console.log($('.class-slider'));
 		$('.class-slider').slick({
 			accessibility: false,	// 矢印キーでスライドを切り替える
 			adaptiveHeight: false,	// スライドの高さが違うときに自動調整する
@@ -282,7 +282,7 @@ console.log($('.class-slider'));
 			if(model["attributes"]["pickUpUrl"]){	// PICK UPアドレスが空白はスルー
 				$(this.el).append(this.compileTempPickup(model.toJSON()));
 			}
-
+console.log($(this.el));
 		}, this);
 
 		// PICK UP配置 完了後 スライダー初期設定
