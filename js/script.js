@@ -231,6 +231,9 @@ const viewPickup = Backbone.View.extend({
 
 	// DOMエレメントを指定
 	el: '#id-slider',
+	// tagName: "div",              //←新しくelを作る場合
+	// id: "cnt-index",
+	// template: null,
 
 	// テンプレートをコンパイルする
 	compileTempPickup: _.template(_render("pickup")),
@@ -270,15 +273,6 @@ const viewPickup = Backbone.View.extend({
 
 	},
 
-	xxx: function (aaa, bbb) {
-console.log(aaa);
-		aaa.append(bbb);
-console.log(aaa);
-		// if (aaa.length === 0) {
-		// 	this.xxx(aaa, bbb);
-		// }
-	},
-
 	/**
 	 * render
 	 */
@@ -291,13 +285,7 @@ console.log(aaa);
 console.log(this.compileTempPickup(model.toJSON()));
 			// PICK UP 表示
 			if(model["attributes"]["pickUpUrl"]){	// PICK UPアドレスが空白はスルー
-
-				// while ($(this.el).length < 1) {
-				// $(this.el).append(this.compileTempPickup(model.toJSON()));
-				this.xxx($(this.el), this.compileTempPickup(model.toJSON()));
-				// }
-
-
+				$(this.el).append(this.compileTempPickup(model.toJSON()));
 			}
 // console.log($(this.el).length);
 // w.fn.init {}
