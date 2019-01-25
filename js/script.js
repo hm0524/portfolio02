@@ -235,30 +235,6 @@ const viewPickup = Backbone.View.extend({
 	// テンプレートをコンパイルする
 	compileTempPickup: _.template(_render("pickup")),
 
-	initialize: function () {
-		this.render();
-	},
-
-	/**
-	 * render
-	 */
-	render: function () {
-
-		// PICK UP配置
-		this.collection.each(function (model, index) {
-
-			// PICK UP 表示
-			if(model["attributes"]["pickUpUrl"]){	// PICK UPアドレスが空白はスルー
-				$(this.el).append(this.compileTempPickup(model.toJSON()));
-			}
-
-		}, this);
-
-		// PICK UP配置 完了後 スライダー初期設定
-		this.iniSlider();
-
-	},
-
 	/**
 	 * スライダー初期設定
 	 */
@@ -292,6 +268,30 @@ const viewPickup = Backbone.View.extend({
 			}]
 		});
 
+	},
+	
+	/**
+	 * render
+	 */
+	render: function () {
+
+		// PICK UP配置
+		this.collection.each(function (model, index) {
+
+			// PICK UP 表示
+			if(model["attributes"]["pickUpUrl"]){	// PICK UPアドレスが空白はスルー
+				$(this.el).append(this.compileTempPickup(model.toJSON()));
+			}
+
+		}, this);
+
+		// PICK UP配置 完了後 スライダー初期設定
+		this.iniSlider();
+
+	},
+
+	initialize: function () {
+		this.render();
 	}
 
 });
