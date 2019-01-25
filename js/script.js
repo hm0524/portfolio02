@@ -230,7 +230,7 @@ const viewSetting = Backbone.View.extend({
 const viewPickup = Backbone.View.extend({
 
 	// DOMエレメントを指定
-	el: $('#id-slider'),
+	el: '#id-slider',
 	// tagName: "div",
 	// id: "cnt-index",
 	// template: null,
@@ -286,8 +286,7 @@ const viewPickup = Backbone.View.extend({
 console.log($(this.el));
 			// PICK UP 表示
 			if(model["attributes"]["pickUpUrl"]){	// PICK UPアドレスが空白はスルー
-				// $(this.el).append(this.compileTempPickup(model.toJSON()));
-				this.$el.append(this.compileTempPickup(model.toJSON()));
+				$(this.el).append(this.compileTempPickup(model.toJSON()));
 			}
 console.log($(this.el));
 // w.fn.init {}
