@@ -247,7 +247,7 @@ const viewPickup = Backbone.View.extend({
 		// 	workListPaddingTop(image[0].height);
 		//
 		// });
-console.log('xxx');
+console.log($('.class-slider'));
 		$('.class-slider').slick({
 			accessibility: false,	// 矢印キーでスライドを切り替える
 			adaptiveHeight: false,	// スライドの高さが違うときに自動調整する
