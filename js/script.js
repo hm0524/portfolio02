@@ -56,8 +56,8 @@ const viewSetting = Backbone.View.extend({
 		this.render();
 
 		const events = {
-            'click #id-siteName'		: '_onHomeBtn',			// ヘッダ [サイト名]
-            'click #id-menuHomeBtn'		: '_onHomeBtn',			// ヘッダ [Home]
+			'click #id-siteName'		: '_onHomeBtn',			// ヘッダ [サイト名]
+			'click #id-menuHomeBtn'			: '_onHomeBtn',			// ヘッダ [Home]
 			'click #id-menuWorkListBtn'	: '_onWorkListBtn',		// ヘッダ [作品一覧]
 			'click #id-blogBtn'			: '_onblogBtn',			// ヘッダ [ブログ]
 			'click #id-enquiryBtn'		: '_onenquiryBtn',		// ヘッダ [お問い合わせ]
