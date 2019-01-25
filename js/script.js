@@ -271,11 +271,12 @@ const viewPickup = Backbone.View.extend({
 	},
 
 	xxx: function (aaa, bbb) {
+console.log(aaa.length);
 		aaa.append(bbb);
-		if (aaa.length === 0) {
-			this.xxx(aaa, bbb);
-		}
-// console.log();
+console.log(aaa.length);
+		// if (aaa.length === 0) {
+		// 	this.xxx(aaa, bbb);
+		// }
 	},
 
 	/**
