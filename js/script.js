@@ -273,8 +273,6 @@ const viewPickup = Backbone.View.extend({
 
 	},
 
-el: '#id-slider',
-
 	/**
 	 * render
 	 */
