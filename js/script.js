@@ -230,7 +230,10 @@ const viewSetting = Backbone.View.extend({
 const viewPickup = Backbone.View.extend({
 
 	// DOMエレメントを指定
-	el: '#id-slider',
+//	el: '#id-slider',
+	tagName: "div",              //←新しくelを作る場合
+	id: "id-slider",
+	template: null,
 
 	// テンプレートをコンパイルする
 	compileTempPickup: _.template(_render("pickup")),
