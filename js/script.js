@@ -284,7 +284,7 @@ console.log(this.compileTempPickup(model.toJSON()));
 			if(model["attributes"]["pickUpUrl"]){	// PICK UPアドレスが空白はスルー
 				$(this.el).append(this.compileTempPickup(model.toJSON()));
 			}
-console.log(Boolean($(this.el)));
+console.log($(this.el));
 		}, this);
 
 		// PICK UP配置 完了後 スライダー初期設定
