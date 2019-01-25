@@ -272,6 +272,7 @@ const viewPickup = Backbone.View.extend({
 
 	xxx: function (aaa, bbb) {
 		aaa.append(bbb);
+console.log(aaa.length);
 	},
 
 	/**
@@ -294,7 +295,7 @@ console.log(this.compileTempPickup(model.toJSON()));
 
 
 			}
-console.log($(this.el).length);
+// console.log($(this.el).length);
 // w.fn.init {}
 // w.fn.init [div#id-slider.class-slider]
 		}, this);
