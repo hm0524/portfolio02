@@ -29,10 +29,10 @@
 			$('#id_main').load('../temp_top.html', function() {
 $.when(
 				// IE対応
-				moveHeadWidth();
+				moveHeadWidth()
 
 				// 【作品一覧ファイル】読み込み 作品一覧 配置
-				loadWorklist();
+				loadWorklist()
 ).done(function(){
 				// フッタ 配置
 				$('#id_footer').load('../temp_footer.html', function() {
