@@ -231,9 +231,6 @@ const viewPickup = Backbone.View.extend({
 
 	// DOMエレメントを指定
 	el: '#id-slider',
-	// tagName: "div",
-	// id: "cnt-index",
-	// template: null,
 
 	// テンプレートをコンパイルする
 	compileTempPickup: _.template(_render("pickup")),
