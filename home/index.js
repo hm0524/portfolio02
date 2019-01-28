@@ -44,11 +44,13 @@
 			});
 		});
 	});
-	var __onload_flag = window.onload;
-	window.onload = function() {
-	    if (__onload_flag) {
-	        __onload_flag();
-	        location.reload();
-	    }
-	}
+
 }());
+
+var __onload_flag = window.onload;
+window.onload = function() {
+		if (__onload_flag) {
+				__onload_flag();
+				location.reload();
+		}
+}
