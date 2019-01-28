@@ -28,7 +28,6 @@
 			// トップ配置
 			$('#id_main').load('../temp_top.html', function() {
 
-$.when(
 				// IE対応
 				moveHeadWidth();
 
@@ -40,7 +39,7 @@ $.when(
 					// ページ内遷移
 					idTransition();
 				});
-);
+
 			});
 		});
 	});
