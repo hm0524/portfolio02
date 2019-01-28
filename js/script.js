@@ -502,4 +502,5 @@ const moveHeadWidth = function(){
 
 $(window).on('load resize', function(){
 	moveHeadWidth();
+	location.reload();
 });
