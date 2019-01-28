@@ -27,19 +27,19 @@
 
 			// トップ配置
 			$('#id_main').load('../temp_top.html', function() {
-
+$.when(
 				// IE対応
 				moveHeadWidth();
 
 				// 【作品一覧ファイル】読み込み 作品一覧 配置
 				loadWorklist();
-
+).done(function(){
 				// フッタ 配置
 				$('#id_footer').load('../temp_footer.html', function() {
 					// ページ内遷移
 					idTransition();
 				});
-
+});
 			});
 		});
 	});
